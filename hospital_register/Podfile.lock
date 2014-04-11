@@ -1,0 +1,22 @@
+PODS:
+  - PinYin4Objc (1.1.1)
+  - Reddydog (1.0.0)
+  - SDWebImage (3.5.4):
+    - SDWebImage/Core
+  - SDWebImage/Core (3.5.4)
+
+DEPENDENCIES:
+  - PinYin4Objc (~> 1.1.1)
+  - Reddydog (from `https://github.com/yangyangduo/Reddydog.git`)
+  - SDWebImage (~> 3.5.2)
+
+EXTERNAL SOURCES:
+  Reddydog:
+    :git: https://github.com/yangyangduo/Reddydog.git
+
+SPEC CHECKSUMS:
+  PinYin4Objc: c1fbf5805994e0b3f9aac99464403b01db28ece4
+  Reddydog: f22cb22fe93642cc30c37beb631cdf3b2ab15538
+  SDWebImage: 1a62010700adbba823b621fc217906739dbf6aa5
+
+COCOAPODS: 0.29.0

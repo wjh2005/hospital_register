@@ -1,0 +1,154 @@
+/* 
+  Localizable.strings
+  hospital
+
+  Created by Zhao yang on 3/11/14.
+
+*/
+
+
+/******************** Global | Strings ********************/
+
+"hospital_name"                  =              "长沙市中心医院";
+
+"loading"                        =              "加载中";
+"done"                           =              "完成";
+"back"                           =              "返回";
+"search"                         =              "搜索";
+"send"                           =              "发送";
+"back_to_portal"                 =              "首页";
+"male"                           =              "男";
+"female"                         =              "女";
+"confirm"                        =              "确定";
+"cancel"                         =              "取消";
+"modify"                         =              "修改";
+"please_select"                  =              "请选择";
+"within_a_week"                  =              "一周内";
+"no_data"                        =              "没有数据";
+
+
+/******************** Date | Strings ********************/
+
+"today"                          =              "今天";
+"monday"                         =              "星期一";
+"tuesday"                        =              "星期二";
+"wednesday"                      =              "星期三";
+"thursday"                       =              "星期四";
+"friday"                         =              "星期五";
+"saturday"                       =              "星期六";
+"sunday"                         =              "星期天";
+"morning"                        =              "上午";
+"afternoon"                      =              "下午";
+"evening"                        =              "晚上";
+
+
+/******************** Register | Strings ********************/
+
+"i_want_to_register"             =              "我要挂号";
+"register_success"               =              "挂号成功";
+"register_people"                =              "挂号人";
+"department"                     =              "科室";
+"time"                           =              "时间";
+"clinic_card"                    =              "就诊卡";
+"clinic_card_number"             =              "就诊卡号";
+"to_register"                    =              "去挂号";
+"general_register"               =              "普通挂号";
+"expert_register"                =              "专家挂号";
+"outpatient_department_expert"   =              "科室专家";
+"outpatient_deparment_list"      =              "门诊列表";
+"no_experts_today"               =              "今天没有在诊专家";
+"outpatient_department_time"     =              "门诊时间";
+"register_time"                  =              "挂号时间";
+"register_number_remain"         =              "剩余号源";
+"register_cost"                  =              "挂号费用";
+"expert_summary"                 =              "专家简介";
+"register_order_confirm"         =              "信息确认";
+"confirm_and_payment"            =              "确认并付款";
+"register_order"                 =              "我的挂号单";
+"register_price"                 =              "挂号费";
+"hospital"                       =              "医院";
+"medical"                        =              "医生";
+
+/******************** Real Time Queuing | Strings ********************/
+
+"real_time_queuing"              =              "实时叫号";
+"outpatient_queuing"             =              "普通门诊叫号";
+"expert_queuing"                 =              "专家叫号";
+"experts_today"                  =              "当日在诊专家";
+"update_on"                      =              "更新于";
+"numbers_registered"             =              "已就诊号";
+"queuing_not_start"              =              "当前叫号未开始";
+
+
+/******************** Report | Strings ********************/
+
+"report_queries"                 =              "就诊经历";
+"report_id"                      =              "报告序号";
+"report_date"                    =              "日期";
+
+
+/******************** Medical Order | Strings ********************/
+
+"medical_order_query"            =              "就诊经历";
+
+
+/******************** Intelligent Guidance System | Strings ********************/
+
+"intelligent_guidance"           =              "智能导诊";
+
+
+/******************** Personal Center | Strings ********************/
+
+"personal_center"                =              "个人中心";
+"real_name"                      =              "真实姓名";
+"user_name"                      =              "姓名";
+"user_birth"                     =              "年龄";
+"user_height"                    =              "身高";
+"user_body_weight"               =              "体重";
+"cm"                             =              "厘米";
+"kg"                             =              "公斤";
+"user_gender"                    =              "性别";
+"user_mobile"                    =              "联系电话";
+"user_address"                   =              "联系地址";
+"height_tips"                    =              "请填写您的身高, 单位是厘米(如果是一米七五, 仅需输入175)";
+"body_weight_tips"               =              "请填写您的体重, 单位是公斤(如果是65公斤, 仅需输入65)";
+"clinic_card_tips"               =              "就诊卡号请填写就诊卡上显示的卡号, 若不清楚可至本院鼓号收费窗口查询";
+"name_tips"                      =              "请填写您的真实姓名, 以方便我们能够尽快与您取得联系";
+"mobile_tips"                    =              "手机号将用于短信(电话)通知, 无手机者可填写其他家人的手机号码";
+
+
+/******************** More | Strings ********************/
+
+"more"                           =              "更多";
+"hospital_navigation"            =              "医院导航";
+"password_modify"                =              "密码修改";
+"old_password"                   =              "原密码";
+"type_old_password"              =              "请输入原密码";
+"new_password"                   =              "新密码";
+"type_new_password"              =              "请设置登录密码";
+"confirm_password"               =              "确认密码";
+"type_password_again"            =              "请再次填入";
+"password_tips"                  =              "密码由6-16个字符组成, 区分大小写(不能是9位以下纯数字, 不能包含空格)";
+"to_score"                       =              "去评分";
+"about_us"                       =              "关于我们";
+"disclaimer_note"                =              "免责声明";
+"feedback"                       =              "意见反馈";
+"type_your_feedback"             =              "请输入您的宝贵意见";
+"contact_customer_service"       =              "联系客服";
+"logout"                         =              "退出登录";
+
+
+/******************** Pull Refresh Table | Strings ********************/
+
+"pull.refresh"                   =              "下拉刷新";
+"pull.loadmore"                  =              "上拉加载更多";
+"release.pull.loadmore"          =              "释放加载更多";
+"release.refresh"                =              "释放立即刷新";
+"refreshing"                     =              "刷新中...";
+"last.update"                    =              "最后更新";
+"no_more"                        =              "已经到底了";
+"ago"                            =              "以前";
+"just_now"                       =              "刚刚";
+"minute"                         =              "分钟";
+"hour"                           =              "小时";
+"day"                            =              "天";
