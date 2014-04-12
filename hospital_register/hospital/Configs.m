@@ -9,7 +9,7 @@
     NSMutableDictionary *_configs_;
 }
 
-@synthesize appContactPhoneNumber = _appContactPhoneNumber_;
+@synthesize defaultTimeZone;
 
 + (instancetype)defaultConfigs {
     static Configs *configs;
@@ -37,10 +37,9 @@
 - (void)loadFromDiskInternal {
     @synchronized (self) {
         [_configs_ removeAllObjects];
-
-
-
-        _appContactPhoneNumber_ = [_configs_ stringForKey:kConfigContactPhoneNumber];
+        
+        // will really load from disk later .
+        self.defaultTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"];
     }
 }
 

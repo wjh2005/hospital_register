@@ -4,11 +4,9 @@
 
 #import <Foundation/Foundation.h>
 
-const static NSString *kConfigContactPhoneNumber = @"config.contact.phonenumber";
-
 @interface Configs : NSObject
 
-@property (nonatomic, strong, readonly) NSString *appContactPhoneNumber;
+@property (nonatomic, strong) NSTimeZone *defaultTimeZone;
 
 + (instancetype)defaultConfigs;
 

@@ -12,7 +12,7 @@
 - (void)initDefaults {
     [super initDefaults];
     dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.timeZone = [NSTimeZone localTimeZone];
+    dateFormatter.timeZone = [Configs defaultConfigs].defaultTimeZone;
     dateFormatter.dateFormat = @"yyyy-MM-dd";
 }
 

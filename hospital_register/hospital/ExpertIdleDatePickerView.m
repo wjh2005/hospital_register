@@ -11,6 +11,7 @@
 #import "ChineseWeekdayUtils.h"
 #import "UIDevice+SystemVersion.h"
 #import "DateTitleValue.h"
+#import "Configs.h"
 
 @implementation ExpertIdleDatePickerView {
     UIPickerView *datePickerView;
@@ -46,7 +47,7 @@
 - (void)initDefaults {
     defaultIdleDate = -1;
     dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.timeZone = [NSTimeZone localTimeZone];
+    dateFormatter.timeZone = [Configs defaultConfigs].defaultTimeZone;
     dateFormatter.dateFormat = @"yyyy-MM-dd";
     titleValueItems = [NSMutableArray array];
 }

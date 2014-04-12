@@ -62,7 +62,7 @@
     self.gender = GenderFemale;
     self.bodyHeight = 175.f;
     self.bodyWeight = 60.f;
-    self.birth = [dateFormatter dateFromString:@"1987-09-12"];
+    self.birth = [dateFormatter dateFromString:@"1987-12-09"];
     self.address = @"岳麓区文轩路299号";
     self.mobile = @"18688881234";
     self.clinicCard.cardNumber = @"6228 7447 209";

@@ -7,6 +7,7 @@
 #import "UIColor+MoreColor.h"
 #import "ChineseWeekdayUtils.h"
 #import "DateTitleValue.h"
+#import "Configs.h"
 
 @implementation RegisterDatePickerView {
     UIPickerView *datePickerView;
@@ -113,7 +114,7 @@
 
     NSInteger weekDayToday = [ChineseWeekdayUtils chineseWeekDayToday];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.timeZone = [NSTimeZone localTimeZone];
+    dateFormatter.timeZone = [Configs defaultConfigs].defaultTimeZone;
     dateFormatter.dateFormat = @"yyyy-MM-dd";
 
     NSInteger dateSelectedRowIndex = -1;

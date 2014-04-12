@@ -41,6 +41,10 @@
 }
 
 - (void)submitFeedback:(id)sender {
+    [[XXAlertView currentAlertView] setMessage:NSLocalizedString(@"feedback_success", @"") forType:AlertViewTypeSuccess];
+    [[XXAlertView currentAlertView] alertForLock:NO autoDismiss:YES];
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "BirthDayPickerView.h"
 #import "UIDevice+SystemVersion.h"
 #import "UIColor+MoreColor.h"
+#import "Configs.h"
 
 @implementation BirthDayPickerView {
     UIDatePicker *datePicker;
@@ -87,12 +88,13 @@
     }
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.timeZone = [NSTimeZone localTimeZone];
+    dateFormatter.timeZone = [Configs defaultConfigs].defaultTimeZone;
     dateFormatter.dateFormat = @"yyyy-MM-dd";
     
     datePicker = [[UIDatePicker alloc] initWithFrame:
                       CGRectMake(0, 40, self.bounds.size.width, 216)];
-    datePicker.timeZone = [NSTimeZone localTimeZone];
+    datePicker.timeZone = [Configs defaultConfigs].defaultTimeZone;
+    datePicker.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
     datePicker.datePickerMode = UIDatePickerModeDate;
     datePicker.maximumDate = [NSDate date];
     datePicker.minimumDate = [dateFormatter dateFromString:@"1900-01-01"];

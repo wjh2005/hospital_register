@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XXBaseViewController.h"
+#import "Configs.h"
 #import "UIColor+MoreColor.h"
 
 @interface BaseViewController : XXBaseViewController

@@ -77,10 +77,9 @@
 #pragma mark Empty Content View
 
 - (void)showLoadingViewWithMessage:(NSString *)message {
-    UIView *loadingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.standardTopbarHeight)];
+    UIView *loadingView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, [UIScreen mainScreen].bounds.size.height - self.standardTopbarHeight)];
     loadingView.tag = LOADING_VIEW_TAG;
     loadingView.backgroundColor = self.view.backgroundColor;
-
     UIActivityIndicatorView *indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
     indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     indicatorView.center = CGPointMake(self.view.center.x - 35, self.view.bounds.size.height / 2 - self.standardTopbarHeight);
@@ -111,7 +110,7 @@
 }
 
 - (void)showEmptyContentViewWithMessage:(NSString *)message {
-    UIView *emptyContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height - self.standardTopbarHeight)];
+    UIView *emptyContentView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, [UIScreen mainScreen].bounds.size.height - self.standardTopbarHeight)];
     emptyContentView.tag = EMPTY_CONTENT_VIEW_TAG;
     emptyContentView.backgroundColor = self.view.backgroundColor;
     UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 220, 30)];

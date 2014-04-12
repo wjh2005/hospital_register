@@ -102,6 +102,8 @@
 		6F54C40418E95A71008DAE97 /* btn_picker_confirm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F54C40218E95A71008DAE97 /* btn_picker_confirm@2x.png */; };
 		6F54C40518E95A71008DAE97 /* btn_picker_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F54C40318E95A71008DAE97 /* btn_picker_cancel@2x.png */; };
 		6F61C1EA18D350FB00CDFD19 /* about_us.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DD564F3DA5D3D1ED40602A9 /* about_us.html */; };
+		6F8C7E3618F8E63000C5D765 /* alert_failed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8C7E3418F8E63000C5D765 /* alert_failed@2x.png */; };
+		6F8C7E3718F8E63000C5D765 /* alert_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8C7E3518F8E63000C5D765 /* alert_success@2x.png */; };
 		6F9A018318DBEF0F001DBC79 /* ClinicCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A018218DBEF0F001DBC79 /* ClinicCard.m */; };
 		6FB3F9CA18CEF9C40066C023 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB3F9C918CEF9C30066C023 /* Foundation.framework */; };
 		6FB3F9CC18CEF9C40066C023 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FB3F9CB18CEF9C40066C023 /* CoreGraphics.framework */; };
@@ -279,6 +281,8 @@
 		6F54C40018E951A1008DAE97 /* bg_picker_view@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_picker_view@2x.png"; sourceTree = "<group>"; };
 		6F54C40218E95A71008DAE97 /* btn_picker_confirm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_picker_confirm@2x.png"; sourceTree = "<group>"; };
 		6F54C40318E95A71008DAE97 /* btn_picker_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_picker_cancel@2x.png"; sourceTree = "<group>"; };
+		6F8C7E3418F8E63000C5D765 /* alert_failed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert_failed@2x.png"; sourceTree = "<group>"; };
+		6F8C7E3518F8E63000C5D765 /* alert_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert_success@2x.png"; sourceTree = "<group>"; };
 		6F9A018118DBEF0F001DBC79 /* ClinicCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClinicCard.h; sourceTree = "<group>"; };
 		6F9A018218DBEF0F001DBC79 /* ClinicCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClinicCard.m; sourceTree = "<group>"; };
 		6FB3F9C618CEF9C30066C023 /* hospital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hospital.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -569,6 +573,15 @@
 			name = disclosure;
 			sourceTree = "<group>";
 		};
+		6F8C7E3318F8E60900C5D765 /* alert */ = {
+			isa = PBXGroup;
+			children = (
+				6F8C7E3418F8E63000C5D765 /* alert_failed@2x.png */,
+				6F8C7E3518F8E63000C5D765 /* alert_success@2x.png */,
+			);
+			name = alert;
+			sourceTree = "<group>";
+		};
 		6FB3F9BD18CEF9C30066C023 = {
 			isa = PBXGroup;
 			children = (
@@ -653,6 +666,7 @@
 		6FB3F9F818CEF9EA0066C023 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6F8C7E3318F8E60900C5D765 /* alert */,
 				6DD56A8DE283C779D15926BF /* paper */,
 				6DD56977E3C1D4AA175DE838 /* portal */,
 				6DD56F514C41513B4054A196 /* disclosure */,
@@ -879,6 +893,7 @@
 				6F54C40118E951A1008DAE97 /* bg_picker_view@2x.png in Resources */,
 				6DD568401521DA344B84EC25 /* register_notice.html in Resources */,
 				6DD565DA8F3DF9896D4A5166 /* paper_bottom@2x.png in Resources */,
+				6F8C7E3618F8E63000C5D765 /* alert_failed@2x.png in Resources */,
 				6DD561A61463C10164E95A92 /* paper_single@2x.png in Resources */,
 				6DD56C54C66ED0FF67649915 /* paper_top@2x.png in Resources */,
 				6F0819DB18DBE16E003EAE1F /* btn_yellow_short@2x.png in Resources */,
@@ -927,6 +942,7 @@
 				6DD5620AC3A807C417A1E929 /* btn_portal@2X.png in Resources */,
 				6DD5623491AA31D5B0B446C0 /* img_medical@2x.png in Resources */,
 				6DD5653393AA5F157D833F03 /* btn_yellow_middle_highlighted@2x.png in Resources */,
+				6F8C7E3718F8E63000C5D765 /* alert_success@2x.png in Resources */,
 				6DD5660DF2CA8320B0181900 /* btn_blue_middle@2x.png in Resources */,
 				6DD565D7E6D35770BF29633D /* btn_yellow_middle@2x.png in Resources */,
 				6DD565DDEB3B06BB8A0E9388 /* btn_blue_middle_highlighted@2x.png in Resources */,

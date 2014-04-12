@@ -1,10 +1,10 @@
-/* 
-  Localizable.strings
-  hospital
-
-  Created by Zhao yang on 3/11/14.
-
-*/
+/*
+ Localizable.strings
+ hospital
+ 
+ Created by Zhao yang on 3/11/14.
+ 
+ */
 
 
 /******************** Global | Strings ********************/
@@ -25,6 +25,7 @@
 "please_select"                  =              "请选择";
 "within_a_week"                  =              "一周内";
 "no_data"                        =              "没有数据";
+"retry_loading"                  =              "加载失败,请点击屏幕重试";
 
 
 /******************** Date | Strings ********************/
@@ -84,7 +85,7 @@
 
 "report_queries"                 =              "就诊经历";
 "report_id"                      =              "报告序号";
-"report_date"                    =              "报告日期";
+"report_date"                    =              "日期";
 
 
 /******************** Medical Order | Strings ********************/
@@ -136,6 +137,7 @@
 "type_your_feedback"             =              "请输入您的宝贵意见";
 "contact_customer_service"       =              "联系客服";
 "logout"                         =              "退出登录";
+"feedback_success"               =              "反馈成功";
 
 
 /******************** Pull Refresh Table | Strings ********************/

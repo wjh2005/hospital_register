@@ -74,6 +74,7 @@
     report1.identifier = @"149225389";
     report1.date = [dateFormatter dateFromString:@"2013-03-27"];
     report1.hasRead = NO;
+    report1.reportUrl = @"http://www.baidu.com";
 
     Report *report2 = [[Report alloc] init];
     report2.name = @"人工制定治疗计划(复杂)";
@@ -182,9 +183,11 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    WebViewController *webViewController = [[WebViewController alloc] init];
+    Report *report = [reports objectAtIndex:indexPath.row];
+    WebViewController *webViewController = [[WebViewController alloc] initWithUrl:report.reportUrl];
     [self.navigationController pushViewController:webViewController animated:YES];
-    [webViewController showEmptyContentViewWithMessage:NSLocalizedString(@"no_data", @"")];
+
+//    [webViewController showEmptyContentViewWithMessage:NSLocalizedString(@"no_data", @"")];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 

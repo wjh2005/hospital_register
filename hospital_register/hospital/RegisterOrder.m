@@ -6,7 +6,7 @@
 #import "Expert.h"
 #import "Department.h"
 #import "ChineseWeekdayUtils.h"
-
+#import "Configs.h"
 
 @implementation RegisterOrder {
 
@@ -40,7 +40,7 @@
 
 - (NSString *)formattedRegisterDateString {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.timeZone = [NSTimeZone localTimeZone];
+    dateFormatter.timeZone = [Configs defaultConfigs].defaultTimeZone;
     dateFormatter.dateFormat = @"yyyy-MM-dd";
     if(RegisterTypeExpert == self.registerType) {
         NSString *timeString =
@@ -61,7 +61,7 @@
 }
 - (NSString *)formattedRegisterDateStringWithWeekDay {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    dateFormatter.timeZone = [NSTimeZone localTimeZone];
+    dateFormatter.timeZone = [Configs defaultConfigs].defaultTimeZone;
     dateFormatter.dateFormat = @"yyyy-MM-dd";
 
     NSInteger weekDay = [ChineseWeekdayUtils chineseWeekDayForDate:self.registerDate];
