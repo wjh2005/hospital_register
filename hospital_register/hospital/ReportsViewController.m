@@ -124,32 +124,18 @@
         lblReportName.backgroundColor = [UIColor clearColor];
         [cell.contentView addSubview:lblReportName];
 
-//        UILabel *lblIdentifierTips = [[UILabel alloc] initWithFrame:CGRectMake(10, 42, 60, 23)];
         UILabel *lblDateTips = [[UILabel alloc] initWithFrame:CGRectMake(10, 42, 60, 23)];
         lblDateTips.font = [UIFont systemFontOfSize:12.f];
         lblDateTips.textColor = [UIColor appFontGray];
-//        lblIdentifierTips.font = [UIFont systemFontOfSize:12.f];
-//        lblIdentifierTips.textColor = [UIColor appFontGray];
-//        lblIdentifierTips.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"report_id", @"")];
         lblDateTips.text = [NSString stringWithFormat:@"%@:", NSLocalizedString(@"report_date", @"")];
-//        lblIdentifierTips.backgroundColor = [UIColor clearColor];
         lblDateTips.backgroundColor = [UIColor clearColor];
-//        [cell.contentView addSubview:lblIdentifierTips];
         [cell.contentView addSubview:lblDateTips];
-
-//        UILabel *lblIdentifier = [[UILabel alloc] initWithFrame:CGRectMake(lblIdentifierTips.frame.origin.x + 65, 42, 150, 23)];
-//        lblIdentifier.backgroundColor = [UIColor clearColor];
-//        lblIdentifier.tag = 888;
-//        lblIdentifier.textColor = [UIColor appFontGray];
-//        lblIdentifier.font = [UIFont systemFontOfSize:12.f];
 
         UILabel *lblDate = [[UILabel alloc] initWithFrame:CGRectMake(lblDateTips.frame.origin.x + 50, 42, 150, 23)];
         lblDate.backgroundColor = [UIColor clearColor];
         lblDate.tag = 999;
         lblDate.textColor = [UIColor appFontGray];
         lblDate.font = [UIFont systemFontOfSize:12.f];
-
-//        [cell.contentView addSubview:lblIdentifier];
         [cell.contentView addSubview:lblDate];
 
         UILabel *lblNew = [[UILabel alloc] initWithFrame:CGRectMake(180, 50, 28, 14)];
@@ -186,8 +172,6 @@
     Report *report = [reports objectAtIndex:indexPath.row];
     WebViewController *webViewController = [[WebViewController alloc] initWithUrl:report.reportUrl];
     [self.navigationController pushViewController:webViewController animated:YES];
-
-//    [webViewController showEmptyContentViewWithMessage:NSLocalizedString(@"no_data", @"")];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
