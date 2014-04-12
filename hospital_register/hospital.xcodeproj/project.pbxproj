@@ -120,6 +120,9 @@
 		6FB3FA0118CEFAF10066C023 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB3FA0018CEFAF10066C023 /* BaseViewController.m */; };
 		6FB3FA0418CEFAFA0066C023 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB3FA0318CEFAFA0066C023 /* RootViewController.m */; };
 		6FB81AD218E967000076BBA5 /* BirthDayPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB81AD118E967000076BBA5 /* BirthDayPickerView.m */; };
+		6FBFF61518F9720D002E8A5D /* icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBFF61318F9720D002E8A5D /* icon@2x.png */; };
+		6FBFF61618F9720D002E8A5D /* icon7@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBFF61418F9720D002E8A5D /* icon7@2x.png */; };
+		6FBFF61818F97378002E8A5D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FBFF61718F97378002E8A5D /* icon.png */; };
 		6FC51D3E18E4125D0058DF4F /* ExpertIdleDatePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC51D3D18E4125D0058DF4F /* ExpertIdleDatePickerView.m */; };
 		6FC51D4118E415C90058DF4F /* ExpertsWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FC51D4018E415C90058DF4F /* ExpertsWrapper.m */; };
 		6FEC436318E31F1500A9D7A2 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 6FEC435B18E31F1500A9D7A2 /* blackArrow.png */; };
@@ -307,6 +310,9 @@
 		6FB3FA0318CEFAFA0066C023 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		6FB81AD018E967000076BBA5 /* BirthDayPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BirthDayPickerView.h; sourceTree = "<group>"; };
 		6FB81AD118E967000076BBA5 /* BirthDayPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BirthDayPickerView.m; sourceTree = "<group>"; };
+		6FBFF61318F9720D002E8A5D /* icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon@2x.png"; sourceTree = "<group>"; };
+		6FBFF61418F9720D002E8A5D /* icon7@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon7@2x.png"; sourceTree = "<group>"; };
+		6FBFF61718F97378002E8A5D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		6FC51D3C18E4125D0058DF4F /* ExpertIdleDatePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertIdleDatePickerView.h; sourceTree = "<group>"; };
 		6FC51D3D18E4125D0058DF4F /* ExpertIdleDatePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpertIdleDatePickerView.m; sourceTree = "<group>"; };
 		6FC51D3F18E415C90058DF4F /* ExpertsWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpertsWrapper.h; sourceTree = "<group>"; };
@@ -666,6 +672,7 @@
 		6FB3F9F818CEF9EA0066C023 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6FBFF61218F971FD002E8A5D /* app */,
 				6F8C7E3318F8E60900C5D765 /* alert */,
 				6DD56A8DE283C779D15926BF /* paper */,
 				6DD56977E3C1D4AA175DE838 /* portal */,
@@ -786,6 +793,16 @@
 			name = documents;
 			sourceTree = "<group>";
 		};
+		6FBFF61218F971FD002E8A5D /* app */ = {
+			isa = PBXGroup;
+			children = (
+				6FBFF61718F97378002E8A5D /* icon.png */,
+				6FBFF61318F9720D002E8A5D /* icon@2x.png */,
+				6FBFF61418F9720D002E8A5D /* icon7@2x.png */,
+			);
+			name = app;
+			sourceTree = "<group>";
+		};
 		6FEC435A18E31EDD00A9D7A2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -893,6 +910,7 @@
 				6F54C40118E951A1008DAE97 /* bg_picker_view@2x.png in Resources */,
 				6DD568401521DA344B84EC25 /* register_notice.html in Resources */,
 				6DD565DA8F3DF9896D4A5166 /* paper_bottom@2x.png in Resources */,
+				6FBFF61818F97378002E8A5D /* icon.png in Resources */,
 				6F8C7E3618F8E63000C5D765 /* alert_failed@2x.png in Resources */,
 				6DD561A61463C10164E95A92 /* paper_single@2x.png in Resources */,
 				6DD56C54C66ED0FF67649915 /* paper_top@2x.png in Resources */,
@@ -944,8 +962,10 @@
 				6DD5653393AA5F157D833F03 /* btn_yellow_middle_highlighted@2x.png in Resources */,
 				6F8C7E3718F8E63000C5D765 /* alert_success@2x.png in Resources */,
 				6DD5660DF2CA8320B0181900 /* btn_blue_middle@2x.png in Resources */,
+				6FBFF61618F9720D002E8A5D /* icon7@2x.png in Resources */,
 				6DD565D7E6D35770BF29633D /* btn_yellow_middle@2x.png in Resources */,
 				6DD565DDEB3B06BB8A0E9388 /* btn_blue_middle_highlighted@2x.png in Resources */,
+				6FBFF61518F9720D002E8A5D /* icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

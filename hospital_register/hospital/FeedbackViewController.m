@@ -7,7 +7,6 @@
 
 @implementation FeedbackViewController {
     UITextView *txtFeedback;
-
 }
 
 - (void)initUI {

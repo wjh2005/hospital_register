@@ -37,7 +37,6 @@
 - (void)loadFromDiskInternal {
     @synchronized (self) {
         [_configs_ removeAllObjects];
-        
         // will really load from disk later .
         self.defaultTimeZone = [NSTimeZone timeZoneWithAbbreviation:@"GMT+0800"];
     }
