@@ -69,28 +69,56 @@
 
     /* Generate Mock Reports */
 
-    Report *report1 = [[Report alloc] init];
-    report1.name = @"球后全部血管彩色多普勒超声";
-    report1.identifier = @"149225389";
-    report1.date = [dateFormatter dateFromString:@"2013-03-27"];
-    report1.hasRead = NO;
-    report1.reportUrl = @"http://www.baidu.com";
+    if(ReportTypeReport == self.reportType) {
+        
+        Report *report1 = [[Report alloc] init];
+        report1.name = @"球后全部血管彩色多普勒超声";
+        report1.identifier = @"149225389";
+        report1.date = [dateFormatter dateFromString:@"2013-03-27"];
+        report1.hasRead = NO;
+        report1.reportUrl = @"http://www.baidu.com";
 
-    Report *report2 = [[Report alloc] init];
-    report2.name = @"人工制定治疗计划(复杂)";
-    report2.identifier = @"168706638";
-    report2.date = [dateFormatter dateFromString:@"2013-02-19"];
-    report2.hasRead = YES;
+        Report *report2 = [[Report alloc] init];
+        report2.name = @"人工制定治疗计划(复杂)";
+        report2.identifier = @"168706638";
+        report2.date = [dateFormatter dateFromString:@"2013-02-19"];
+        report2.hasRead = YES;
 
-    Report *report3 = [[Report alloc] init];
-    report3.name = @"抗血小板膜糖蛋白自身抗体测定";
-    report3.identifier = @"157076670";
-    report3.date = [dateFormatter dateFromString:@"2013-02-09"];
-    report3.hasRead = YES;
+        Report *report3 = [[Report alloc] init];
+        report3.name = @"抗血小板膜糖蛋白自身抗体测定";
+        report3.identifier = @"157076670";
+        report3.date = [dateFormatter dateFromString:@"2013-02-09"];
+        report3.hasRead = YES;
+        
+        [reports addObject:report1];
+        [reports addObject:report2];
+        [reports addObject:report3];
+    } else {
+        
+        Report *report1 = [[Report alloc] init];
+        report1.name = @"球后全部血管彩色多普勒超声";
+        report1.identifier = @"149225389";
+        report1.date = [dateFormatter dateFromString:@"2013-03-27"];
+        report1.hasRead = NO;
+        report1.reportUrl = @"http://www.baidu.com";
+        
+        Report *report2 = [[Report alloc] init];
+        report2.name = @"人工制定治疗计划(复杂)";
+        report2.identifier = @"168706638";
+        report2.date = [dateFormatter dateFromString:@"2013-02-19"];
+        report2.hasRead = YES;
+        
+        Report *report3 = [[Report alloc] init];
+        report3.name = @"抗血小板膜糖蛋白自身抗体测定";
+        report3.identifier = @"157076670";
+        report3.date = [dateFormatter dateFromString:@"2013-02-09"];
+        report3.hasRead = YES;
+        
+        [reports addObject:report1];
+        [reports addObject:report2];
+        [reports addObject:report3];
 
-    [reports addObject:report1];
-    [reports addObject:report2];
-    [reports addObject:report3];
+    }
 
     [tblReports reloadData];
 }
