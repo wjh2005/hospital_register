@@ -34,7 +34,7 @@
     [self setObject:string forKey:key];
 }
 
-/* if string is blank , set an empty string for weekDayValue */
+/* if string is blank , set an empty string for value */
 - (void)setMayBlankString:(NSString *)string forKey:(id<NSCopying>)key {
     if([XXStringUtils isBlank:string]) {
         [self setObject:[XXStringUtils emptyString] forKey:key];
@@ -43,7 +43,7 @@
     [self setObject:string forKey:key];
 }
 
-- (void)setDateUsinghTimeIntervalSince1970:(NSDate *)date forKey:(id<NSCopying>)key {
+- (void)setDateUsingTimeIntervalSince1970:(NSDate *)date forKey:(id<NSCopying>)key {
     if(date == nil) return;
     [self setObject:[NSNumber numberWithDouble:date.timeIntervalSince1970] forKey:key];
 }

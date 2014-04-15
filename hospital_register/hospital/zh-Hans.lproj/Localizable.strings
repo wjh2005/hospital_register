@@ -90,7 +90,7 @@
 
 /******************** Medical Order | Strings ********************/
 
-"medical_order_query"            =              "就诊经历";
+"medical_order_query"            =              "报告查询";
 
 
 /******************** Intelligent Guidance System | Strings ********************/

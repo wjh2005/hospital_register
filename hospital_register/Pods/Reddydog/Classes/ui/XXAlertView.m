@@ -21,6 +21,9 @@
     UIImageView *imgTips;
     UIActivityIndicatorView *indicatorView;
     UIView *lockedView;
+    UIButton *btnCancel;
+    
+    XXAlertViewCancelledBlock _cancelled_block_;
 }
 
 @synthesize alertViewType;
@@ -42,30 +45,30 @@
 
 - (void)initUI {
     self.backgroundColor = [UIColor blackColor];
-    self.layer.cornerRadius = 10;
+    self.layer.shadowColor = [UIColor redColor].CGColor;
     self.alpha = 0;
     
-    if(imgTips == nil) {
-        imgTips = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-        imgTips.center = CGPointMake(self.center.x, 30);
-        [self addSubview:imgTips];
-    }
+    imgTips = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    imgTips.center = CGPointMake(self.center.x, 30);
+    [self addSubview:imgTips];
+
+    indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
+    indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
+    indicatorView.center = CGPointMake(self.center.x, 30);
+    [self addSubview:indicatorView];
     
-    if(indicatorView == nil) {
-        indicatorView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
-        indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhiteLarge;
-        indicatorView.center = CGPointMake(self.center.x, 30);
-        [self addSubview:indicatorView];
-    }
+    lblMessage = [[UILabel alloc] initWithFrame:CGRectMake(5, 60, 130, 21)];
+    lblMessage.backgroundColor = [UIColor clearColor];
+    lblMessage.textAlignment = NSTextAlignmentCenter;
+    lblMessage.font = [UIFont systemFontOfSize:14.f];
+    lblMessage.textColor = [UIColor whiteColor];
+    [self addSubview:lblMessage];
     
-    if(lblMessage == nil) {
-        lblMessage = [[UILabel alloc] initWithFrame:CGRectMake(5, 60, 130, 21)];
-        lblMessage.backgroundColor = [UIColor clearColor];
-        lblMessage.textAlignment = NSTextAlignmentCenter;
-        lblMessage.font = [UIFont systemFontOfSize:15.f];
-        lblMessage.textColor = [UIColor whiteColor];
-        [self addSubview:lblMessage];
-    }
+    btnCancel = [[UIButton alloc] initWithFrame:CGRectMake(self.bounds.size.width - 48 / 2, 0, 48 / 2, 45.f / 2)];
+    [btnCancel setBackgroundImage:[UIImage imageNamed:@"icon_cancel"] forState:UIControlStateNormal];
+    [btnCancel addTarget:self action:@selector(btnCancelPressed:) forControlEvents:UIControlEventTouchUpInside];
+    btnCancel.hidden = YES;
+    [self addSubview:btnCancel];
 }
 
 + (instancetype)currentAlertView {
@@ -79,9 +82,22 @@
     return currentAlertView;
 }
 
+- (void)alertForLock:(BOOL)isLock autoDismiss:(BOOL)autoDismiss
+      cancelledBlock:(XXAlertViewCancelledBlock)cancelledBlock {
+    [self alertForLock:isLock autoDismiss:autoDismiss];
+    _cancelled_block_ = cancelledBlock;
+    if(_cancelled_block_ == NULL || _cancelled_block_ == nil) {
+        btnCancel.hidden = YES;
+    } else {
+        btnCancel.hidden = NO;
+    }
+}
+
 - (void)alertForLock:(BOOL)isLock autoDismiss:(BOOL)autoDismiss {
     if(self.alertViewState != AlertViewStateReady) return;
     self.alertViewState = AlertViewStateWillAppear;
+    _cancelled_block_ = nil;
+    btnCancel.hidden = YES;
     UIWindow *lastWindow = [self lastWindow];
     if(isLock) {
         lockedView = [[UIView alloc] initWithFrame:lastWindow.bounds];
@@ -105,6 +121,12 @@
                     [self delayDismissAlertView];
                 }
             }];
+}
+
+- (void)btnCancelPressed:(id)sender {
+    if(_cancelled_block_ != NULL && _cancelled_block_ != nil) {
+        _cancelled_block_();
+    }
 }
 
 - (void)alertForLock:(BOOL)isLock timeout:(NSTimeInterval)timeout timeoutMessage:(NSString *)message {

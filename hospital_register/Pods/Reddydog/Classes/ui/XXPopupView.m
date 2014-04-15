@@ -63,9 +63,9 @@
         self.state = XXPopupViewStateOpened;
 //            if(completion != nil) completion();
     }
-    fromScaleTransform:fromScaleTransform toScaleTransform:toScaleTransform
-    fromOpacity:fromOpacity toOpacity:toOpacity
-    fromPosition:fromPosition toPosition:toPosition inLayer:containerLayer];
+                  fromScaleTransform:fromScaleTransform toScaleTransform:toScaleTransform
+                         fromOpacity:fromOpacity toOpacity:toOpacity
+                        fromPosition:fromPosition toPosition:toPosition inLayer:containerLayer];
 }
 
 - (void)closeView {
@@ -97,17 +97,17 @@
         containerLayer = nil;
         self.state = XXPopupViewStateClosed;
     }
-    fromScaleTransform:fromScaleTransform toScaleTransform:toScaleTransform
-    fromOpacity:fromOpacity toOpacity:toOpacity
-    fromPosition:fromPosition toPosition:toPosition inLayer:containerLayer];
+                  fromScaleTransform:fromScaleTransform toScaleTransform:toScaleTransform
+                         fromOpacity:fromOpacity toOpacity:toOpacity
+                        fromPosition:fromPosition toPosition:toPosition inLayer:containerLayer];
 }
 
 - (void)doAnimationsWithCompletion:(void (^)(void))completion
                 fromScaleTransform:(CATransform3D)fromScaleTransform
-                toScaleTransform:(CATransform3D)toScaleTransform
-                fromOpacity:(float)fromOpacity toOpacity:(float)toOpacity
-                fromPosition:(CGPoint)fromPosition toPosition:(CGPoint)toPosition
-                inLayer:(CALayer *)layer {
+                  toScaleTransform:(CATransform3D)toScaleTransform
+                       fromOpacity:(float)fromOpacity toOpacity:(float)toOpacity
+                      fromPosition:(CGPoint)fromPosition toPosition:(CGPoint)toPosition
+                           inLayer:(CALayer *)layer {
 
     // Set Animation Completion Block
     [CATransaction setCompletionBlock:^{

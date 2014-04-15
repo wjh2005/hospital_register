@@ -22,6 +22,8 @@ typedef NS_ENUM(NSUInteger, AlertViewType) {
     AlertViewTypeFailed
 };
 
+typedef void(^XXAlertViewCancelledBlock)(void);
+
 @interface XXAlertView : UIView
 
 @property (assign, nonatomic, readonly) AlertViewType alertViewType;
@@ -31,6 +33,7 @@ typedef NS_ENUM(NSUInteger, AlertViewType) {
 
 - (void)setMessage:(NSString *)message forType:(AlertViewType)type;
 - (void)alertForLock:(BOOL)isLock autoDismiss:(BOOL)autoDismiss;
+- (void)alertForLock:(BOOL)isLock autoDismiss:(BOOL)autoDismiss cancelledBlock:(XXAlertViewCancelledBlock)cancelledBlock;
 - (void)alertForLock:(BOOL)isLock timeout:(NSTimeInterval)timeout timeoutMessage:(NSString *)message;
 - (void)delayDismissAlertView;
 - (void)dismissAlertView;

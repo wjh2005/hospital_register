@@ -45,7 +45,7 @@
 }
 
 - (void)initUI {
-
+    
 }
 
 - (void)setUp {
@@ -84,7 +84,7 @@
     indicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     indicatorView.center = CGPointMake(self.view.center.x - 35, self.view.bounds.size.height / 2 - self.standardTopbarHeight);
     [loadingView addSubview:indicatorView];
-
+    
     UILabel *lbl = [[UILabel alloc] initWithFrame:CGRectMake(self.view.center.x - 15, 0, 120, 30)];
     lbl.backgroundColor = [UIColor clearColor];
     lbl.textColor = [UIColor lightGrayColor];
@@ -92,15 +92,15 @@
     lbl.textAlignment = NSTextAlignmentLeft;;
     lbl.center = CGPointMake(lbl.center.x, indicatorView.center.y);
     [loadingView addSubview:lbl];
-
+    
     if([XXStringUtils isBlank:message]) {
         lbl.text = NSLocalizedString(@"loading", @"");
     } else {
         lbl.text = message;
     }
-
+    
     [indicatorView startAnimating];
-
+    
     [self.view addSubview:loadingView];
 }
 
@@ -120,7 +120,7 @@
     lbl.textAlignment = NSTextAlignmentCenter;
     lbl.center = CGPointMake(self.view.center.x, self.view.bounds.size.height / 2 - self.standardTopbarHeight);
     [emptyContentView addSubview:lbl];
-
+    
     if([XXStringUtils isBlank:message]) {
         lbl.text = NSLocalizedString(@"no_content", @"");
     } else {

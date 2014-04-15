@@ -14,15 +14,17 @@
 - (id)notNSNullObjectForKey:(id)key;
 
 // DEPRECATED
-- (BOOL)boolForKey:(id)key;
+- (BOOL)boolForKey:(id)key __attribute__((deprecated));
 
 - (BOOL)booleanForKey:(id)key;
 
 - (NSString *)stringForKey:(id)key;
 - (NSNumber *)numberForKey:(id)key;
+
+
 - (NSDate *)dateWithTimeIntervalSince1970ForKey:(id)key;
 
-//
+// 用毫秒
 - (NSDate *)dateWithMillisecondsForKey:(id)key;
 - (int)intForKey:(id)key;
 - (long)longForKey:(id)key;
