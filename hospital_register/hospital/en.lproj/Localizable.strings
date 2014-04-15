@@ -83,7 +83,7 @@
 
 /******************** Report | Strings ********************/
 
-"report_queries"                 =              "就诊经历";
+"report_queries"                 =              "报告查询";
 "report_id"                      =              "报告序号";
 "report_date"                    =              "日期";
 
