@@ -9,6 +9,7 @@
 #import "DepartmentsManager.h"
 #import "UIColor+Image.h"
 #import "AccountLoginViewController.h"
+#import "GlobalUserAppData.h"
 
 @implementation AppDelegate {
     RootViewController *_rootViewController_;
@@ -104,6 +105,7 @@
 }
 
 - (void)clearAuth {
+    [[GlobalUserAppData current] clearAuthInfo];
 }
 
 - (void)showLoginViewController {

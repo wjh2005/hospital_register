@@ -60,12 +60,12 @@
 - (void)generateMockData {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd";
-    self.name = @"";
+    self.name = @"张三";
     self.bodyHeight = 175.f;
     self.bodyWeight = 60.f;
-    self.address = @"";
+    self.address = @"长沙市天心区劳动路";
     self.mobile = @"";
-    self.clinicCard.cardNumber = @"";
+    self.clinicCard.cardNumber = @"430110198212121315";
     self.gender = GenderMale;
     self.birth = [dateFormatter dateFromString:@"1987-10-10"];
 }

@@ -107,6 +107,7 @@
 		6F54C40418E95A71008DAE97 /* btn_picker_confirm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F54C40218E95A71008DAE97 /* btn_picker_confirm@2x.png */; };
 		6F54C40518E95A71008DAE97 /* btn_picker_cancel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F54C40318E95A71008DAE97 /* btn_picker_cancel@2x.png */; };
 		6F61C1EA18D350FB00CDFD19 /* about_us.html in Resources */ = {isa = PBXBuildFile; fileRef = 6DD564F3DA5D3D1ED40602A9 /* about_us.html */; };
+		6F86288518FE25B90006F5A5 /* GlobalUserAppData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F86288418FE25B90006F5A5 /* GlobalUserAppData.m */; };
 		6F8C7E3618F8E63000C5D765 /* alert_failed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8C7E3418F8E63000C5D765 /* alert_failed@2x.png */; };
 		6F8C7E3718F8E63000C5D765 /* alert_success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6F8C7E3518F8E63000C5D765 /* alert_success@2x.png */; };
 		6F9A018318DBEF0F001DBC79 /* ClinicCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F9A018218DBEF0F001DBC79 /* ClinicCard.m */; };
@@ -300,6 +301,8 @@
 		6F54C40018E951A1008DAE97 /* bg_picker_view@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_picker_view@2x.png"; sourceTree = "<group>"; };
 		6F54C40218E95A71008DAE97 /* btn_picker_confirm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_picker_confirm@2x.png"; sourceTree = "<group>"; };
 		6F54C40318E95A71008DAE97 /* btn_picker_cancel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_picker_cancel@2x.png"; sourceTree = "<group>"; };
+		6F86288318FE25B90006F5A5 /* GlobalUserAppData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalUserAppData.h; sourceTree = "<group>"; };
+		6F86288418FE25B90006F5A5 /* GlobalUserAppData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalUserAppData.m; sourceTree = "<group>"; };
 		6F8C7E3418F8E63000C5D765 /* alert_failed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert_failed@2x.png"; sourceTree = "<group>"; };
 		6F8C7E3518F8E63000C5D765 /* alert_success@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alert_success@2x.png"; sourceTree = "<group>"; };
 		6F9A018118DBEF0F001DBC79 /* ClinicCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClinicCard.h; sourceTree = "<group>"; };
@@ -794,6 +797,8 @@
 				6F1EB8AF18DA93F6003D73CD /* UIColor+Image.m */,
 				6F4CF45518FD25180042986B /* UIImage+wiRoundedRectImage.h */,
 				6F4CF45618FD25180042986B /* UIImage+wiRoundedRectImage.m */,
+				6F86288318FE25B90006F5A5 /* GlobalUserAppData.h */,
+				6F86288418FE25B90006F5A5 /* GlobalUserAppData.m */,
 			);
 			name = commons;
 			sourceTree = "<group>";
@@ -1096,6 +1101,7 @@
 				6FBF1DDD18FD8B4500274EA8 /* FixedTextField.m in Sources */,
 				6FC51D4118E415C90058DF4F /* ExpertsWrapper.m in Sources */,
 				6DD5605CE46BE32BB63D4CB4 /* PersonalCenterViewController.m in Sources */,
+				6F86288518FE25B90006F5A5 /* GlobalUserAppData.m in Sources */,
 				6DD56AA293D3333B783CFB30 /* IntelligentGuidanceViewController.m in Sources */,
 				6DD5657CA1647381F4681F5C /* ChineseWeekdayUtils.m in Sources */,
 				6DD56C30378B2A952505A713 /* PaperBackgroundView.m in Sources */,

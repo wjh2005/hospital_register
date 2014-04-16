@@ -10,6 +10,7 @@
 #import "AccountRegisterStep1ViewController.h"
 #import "UIImage+wiRoundedRectImage.h"
 #import "UIColor+Image.h"
+#import "GlobalUserAppData.h"
 
 static CGFloat const kTextBoxHeight = 44;
 static CGFloat const kTextBoxWidth  = 320;
@@ -210,7 +211,8 @@ static CGFloat const kTextBoxWidth  = 320;
 - (void)loginSuccess {
     if(LoginStateLogging != self.loginState) return;
     self.loginState = LoginStateUnStart;
-    
+    [GlobalUserAppData current].loginAccount = [XXStringUtils trim:txtAccount.text];
+    [[GlobalUserAppData current] save];
     [[XXAlertView currentAlertView] setMessage:NSLocalizedString(@"login_success", @"") forType:AlertViewTypeSuccess showCancellButton:NO];
     [[XXAlertView currentAlertView] delayDismissAlertView];
     [self.navigationController popViewControllerAnimated:YES];

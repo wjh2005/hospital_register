@@ -7,6 +7,7 @@
 
 #import "RootViewController.h"
 #import "AccountLoginViewController.h"
+#import "GlobalUserAppData.h"
 
 #import "RealtimeQueuingTypePickerViewController.h"
 #import "ReportsViewController.h"
@@ -84,8 +85,9 @@ static const CGFloat kGroupButtonsPanelHeight = kGroupButtonHeight * 2 - 2;
 
 - (void)setUp {
     [super setUp];
-    
-    [self.navigationController pushViewController:[[AccountLoginViewController alloc] init] animated:NO];
+    if(![GlobalUserAppData current].hasLogin) {
+        [self.navigationController pushViewController:[[AccountLoginViewController alloc] init] animated:NO];
+    }
 }
 
 - (void)generateGroupButtonsView {

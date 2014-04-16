@@ -9,6 +9,7 @@
 #import "AccountRegisterStep3ViewController.h"
 #import "FixedTextField.h"
 #import "Account.h"
+#import "GlobalUserAppData.h"
 
 @interface AccountRegisterStep3ViewController ()
 
@@ -78,6 +79,9 @@
 }
 
 - (void)registerSuccess {
+    [GlobalUserAppData current].loginAccount = [Account myAccount].account;
+    [[GlobalUserAppData current] save];
+    
     [[XXAlertView currentAlertView] setMessage:NSLocalizedString(@"account_register_success", @"") forType:AlertViewTypeSuccess];
     [[XXAlertView currentAlertView] delayDismissAlertView];
     
