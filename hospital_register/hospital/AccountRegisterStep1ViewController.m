@@ -38,7 +38,7 @@
     _htmlView_ = [[HtmlView alloc] initWithFrame:CGRectMake(0, 0, paperBackgroundView.bounds.size.width, paperBackgroundView.bounds.size.height - 30)];
     [paperBackgroundView addSubview:_htmlView_];
     
-    UIButton *btnAgreeAndContinue = [[UIButton alloc] initWithFrame:CGRectMake(13, self.view.bounds.size.height - self.standardTopbarHeight - ([UIScreen mainScreen].bounds.size.height <= 480 ? 62 : 70), 280, 77.f / 2)];
+    UIButton *btnAgreeAndContinue = [[UIButton alloc] initWithFrame:CGRectMake(20, self.view.bounds.size.height - self.standardTopbarHeight - ([UIScreen mainScreen].bounds.size.height <= 480 ? 62 : 70), 280, 77.f / 2)];
     [btnAgreeAndContinue setTitle:NSLocalizedString(@"agree_and_continue", @"") forState:UIControlStateNormal];
     [btnAgreeAndContinue setBackgroundImage:[UIImage imageNamed:@"btn_blue"] forState:UIControlStateNormal];
     [btnAgreeAndContinue setBackgroundImage:[UIImage imageNamed:@"btn_blue_highlighted"] forState:UIControlStateHighlighted];
