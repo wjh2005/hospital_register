@@ -114,6 +114,8 @@
         textModifyViewController.tips = NSLocalizedString(@"clinic_card_tips", @"");
         textModifyViewController.textField.keyboardType = UIKeyboardTypeNumberPad;
         textModifyViewController.textField.text = [Account myAccount].clinicCard.cardNumber;
+        textModifyViewController.textField.delegate = self;
+        textModifyViewController.textField.tag = 11;
         modifyViewController = textModifyViewController;
     } else if(indexPath.section == 1) {
         if(indexPath.row == 0) {
@@ -123,6 +125,9 @@
             textModifyViewController.textField.placeholder = NSLocalizedString(@"real_name", @"");
             textModifyViewController.tips = NSLocalizedString(@"name_tips", @"");
             textModifyViewController.textField.text = [Account myAccount].name;
+            textModifyViewController.textField.delegate = self;
+            textModifyViewController.textField.tag = 12;
+            [textModifyViewController.textField addTarget:self action:@selector(textFieldEventEditingChanged:) forControlEvents:UIControlEventEditingChanged];
             modifyViewController = textModifyViewController;
         } else if(indexPath.row == 1) {
             BirthDayPickerView *birthDayPickerView = [[BirthDayPickerView alloc] initWithFrame:CGRectMake(0, [UIScreen mainScreen].bounds.size.height, 0, 0) birthDay:[Account myAccount].birth];
@@ -135,6 +140,8 @@
             textModifyViewController.tips = NSLocalizedString(@"height_tips", @"");
             textModifyViewController.textField.placeholder = @"i.e. 175";
             textModifyViewController.textField.keyboardType = UIKeyboardTypeNumberPad;
+            textModifyViewController.textField.delegate = self;
+            textModifyViewController.textField.tag = 13;
             textModifyViewController.textField.text = [NSString stringWithFormat:@"%.0f", [Account myAccount].bodyHeight];
             modifyViewController = textModifyViewController;
         } else if(indexPath.row == 3) {
@@ -144,6 +151,8 @@
             textModifyViewController.tips = NSLocalizedString(@"body_weight_tips", @"");
             textModifyViewController.textField.placeholder = @"i.e. 65";
             textModifyViewController.textField.keyboardType = UIKeyboardTypeNumberPad;
+            textModifyViewController.textField.delegate = self;
+            textModifyViewController.textField.tag = 14;
             textModifyViewController.textField.text = [NSString stringWithFormat:@"%.0f", [Account myAccount].bodyWeight];
             modifyViewController = textModifyViewController;
         } else if(indexPath.row == 4) {
@@ -159,8 +168,10 @@
             textModifyViewController.identifier = @"mobile";
             textModifyViewController.tips = NSLocalizedString(@"mobile_tips", @"");
             textModifyViewController.textField.placeholder = NSLocalizedString(@"user_mobile", @"");
-            textModifyViewController.textField.keyboardType = UIKeyboardTypePhonePad;
+            textModifyViewController.textField.keyboardType = UIKeyboardTypeNumberPad;
             textModifyViewController.textField.text = [Account myAccount].mobile;
+            textModifyViewController.textField.delegate = self;
+            textModifyViewController.textField.tag = 15;
             modifyViewController = textModifyViewController;
         } else if(indexPath.row == 1) {
             TextModifyViewController *textModifyViewController = [[TextModifyViewController alloc] initWithTextModifyViewType:TextModifyViewTypeMultiLine];
@@ -232,6 +243,28 @@
     }
     [tblPersonalSettings reloadData];
     [textModifyViewController.navigationController popViewControllerAnimated:YES];
+}
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    
+    if(textField.tag == 11) {
+        return range.location < 20;
+    } else if(textField.tag == 13 || textField.tag == 14) {
+        return range.location < 3;
+    } else if(textField.tag == 15) {
+        return range.location < 11;
+    }
+    
+    return YES;
+}
+
+- (void)textFieldEventEditingChanged:(UITextField *)sender {
+    UITextRange *markRange = sender.markedTextRange;
+    int pos = [sender offsetFromPosition:markRange.start toPosition:markRange.end];
+    int nLength = sender.text.length - pos;
+    if (nLength > 4 && pos==0) {
+        sender.text = [sender.text substringToIndex:4];
+    }
 }
 
 #pragma mark -

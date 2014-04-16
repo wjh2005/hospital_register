@@ -6,14 +6,14 @@
 //
 
 #import "RootViewController.h"
-
-#import "ToRegisterViewController.h"
+#import "AccountLoginViewController.h"
 
 #import "RealtimeQueuingTypePickerViewController.h"
 #import "ReportsViewController.h"
 #import "IntelligentGuidanceViewController.h"
 #import "PersonalCenterViewController.h"
 #import "MoreViewController.h"
+#import "ToRegisterViewController.h"
 
 static const CGFloat kGroupButtonHeight = 98;
 static const CGFloat kGroupButtonsPanelHeight = kGroupButtonHeight * 2 - 2;
@@ -80,6 +80,12 @@ static const CGFloat kGroupButtonsPanelHeight = kGroupButtonHeight * 2 - 2;
     [imgBackground addSubview:btnRegister];
 
     [self generateGroupButtonsView];
+}
+
+- (void)setUp {
+    [super setUp];
+    
+    [self.navigationController pushViewController:[[AccountLoginViewController alloc] init] animated:NO];
 }
 
 - (void)generateGroupButtonsView {
@@ -149,6 +155,7 @@ static const CGFloat kGroupButtonsPanelHeight = kGroupButtonHeight * 2 - 2;
 
 // change the navigation top bar back button's dateTitle from view controller's dateTitle to 'Back' string
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
     UIBarButtonItem *btnBackItem = [[UIBarButtonItem alloc] init];
     btnBackItem.title = NSLocalizedString(@"back", @"");
     if(![UIDevice systemVersionIsMoreThanOrEuqal7]) {
@@ -162,6 +169,12 @@ static const CGFloat kGroupButtonsPanelHeight = kGroupButtonHeight * 2 - 2;
         [btnBackItem setTitleTextAttributes:[btnBackItem titleTextAttributesForState:UIControlStateNormal] forState:UIControlStateHighlighted];
     }
     viewController.navigationItem.backBarButtonItem = btnBackItem;
+    
+    if([viewController isKindOfClass:[AccountLoginViewController class]]) {
+        viewController.navigationController.navigationBarHidden = YES;
+    } else {
+        viewController.navigationController.navigationBarHidden = NO;
+    }
 }
 
 #pragma mark -

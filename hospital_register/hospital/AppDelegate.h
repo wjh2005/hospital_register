@@ -16,4 +16,6 @@
 - (RootViewController *)rootViewController;
 - (UIViewController *)topViewController;
 
+- (void)logout;
+
 @end

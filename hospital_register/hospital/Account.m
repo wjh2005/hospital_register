@@ -11,6 +11,8 @@
 
 @implementation Account
 
+@synthesize account;
+@synthesize password;
 @synthesize name = _name_;
 @synthesize birth;
 @synthesize gender;
@@ -58,14 +60,14 @@
 - (void)generateMockData {
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.dateFormat = @"yyyy-MM-dd";
-    self.name = @"王文涛";
-    self.gender = GenderFemale;
+    self.name = @"";
     self.bodyHeight = 175.f;
     self.bodyWeight = 60.f;
-    self.birth = [dateFormatter dateFromString:@"1987-12-09"];
-    self.address = @"岳麓区文轩路299号";
-    self.mobile = @"18688881234";
-    self.clinicCard.cardNumber = @"6228 7447 209";
+    self.address = @"";
+    self.mobile = @"";
+    self.clinicCard.cardNumber = @"";
+    self.gender = GenderMale;
+    self.birth = [dateFormatter dateFromString:@"1987-10-10"];
 }
 
 @end

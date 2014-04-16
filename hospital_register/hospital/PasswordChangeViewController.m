@@ -3,25 +3,7 @@
 //
 
 #import "PasswordChangeViewController.h"
-
-@interface TextField : UITextField
-
-@end
-
-@implementation TextField
-
-- (CGRect)textRectForBounds:(CGRect)bounds {
-    if(![UIDevice systemVersionIsMoreThanOrEuqal7]) {
-        return CGRectMake(bounds.origin.x, bounds.origin.y + 9, bounds.size.width - 35, bounds.size.height);
-    }
-    return [super textRectForBounds:bounds];
-}
-
-- (CGRect)editingRectForBounds:(CGRect)bounds {
-    return [self textRectForBounds:bounds];
-}
-
-@end
+#import "FixedTextField.h"
 
 @implementation PasswordChangeViewController {
     UITableView *tblPasswordChange;
@@ -70,12 +52,12 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:nil];
-    cell.textLabel.font = [UIFont systemFontOfSize:13.f];
+    cell.textLabel.font = [UIFont systemFontOfSize:15.f];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
-    TextField *txtField = [[TextField alloc] initWithFrame:CGRectMake(85, 5, 220, 34)];
+    FixedTextField *txtField = [[FixedTextField alloc] initWithFrame:CGRectMake(85, 5, 220, 34)];
     txtField.delegate = self;
-    txtField.font = [UIFont systemFontOfSize:13.f];
+    txtField.font = [UIFont systemFontOfSize:15.f];
     txtField.secureTextEntry = YES;
     txtField.clearButtonMode = UITextFieldViewModeWhileEditing;
     [cell addSubview:txtField];

@@ -29,6 +29,17 @@
 @synthesize alertViewType;
 @synthesize alertViewState;
 
++ (instancetype)currentAlertView {
+    static XXAlertView *currentAlertView;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
+        currentAlertView = [[[self class] alloc] initWithFrame:CGRectMake(0, 0, 140, 88)];
+        currentAlertView.center = CGPointMake(keyWindow.center.x, keyWindow.center.y);
+    });
+    return currentAlertView;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -46,6 +57,7 @@
 - (void)initUI {
     self.backgroundColor = [UIColor blackColor];
     self.layer.shadowColor = [UIColor redColor].CGColor;
+    self.layer.cornerRadius = 2;
     self.alpha = 0;
     
     imgTips = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 44, 44)];
@@ -65,39 +77,26 @@
     [self addSubview:lblMessage];
     
     btnCancel = [[UIButton alloc] initWithFrame:CGRectMake(self.bounds.size.width - 48 / 2, 0, 48 / 2, 45.f / 2)];
+    btnCancel.layer.cornerRadius = 1;
     [btnCancel setBackgroundImage:[UIImage imageNamed:@"icon_cancel"] forState:UIControlStateNormal];
     [btnCancel addTarget:self action:@selector(btnCancelPressed:) forControlEvents:UIControlEventTouchUpInside];
     btnCancel.hidden = YES;
     [self addSubview:btnCancel];
 }
 
-+ (instancetype)currentAlertView {
-    static XXAlertView *currentAlertView;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        UIWindow *keyWindow = [UIApplication sharedApplication].keyWindow;
-        currentAlertView = [[[self class] alloc] initWithFrame:CGRectMake(0, 0, 140, 88)];
-        currentAlertView.center = CGPointMake(keyWindow.center.x, keyWindow.center.y);
-    });
-    return currentAlertView;
-}
-
-- (void)alertForLock:(BOOL)isLock autoDismiss:(BOOL)autoDismiss
-      cancelledBlock:(XXAlertViewCancelledBlock)cancelledBlock {
+- (void)alertForLock:(BOOL)isLock autoDismiss:(BOOL)autoDismiss cancelledBlock:(XXAlertViewCancelledBlock)cancelledBlock {
     [self alertForLock:isLock autoDismiss:autoDismiss];
     _cancelled_block_ = cancelledBlock;
-    if(_cancelled_block_ == NULL || _cancelled_block_ == nil) {
-        btnCancel.hidden = YES;
-    } else {
-        btnCancel.hidden = NO;
-    }
+    btnCancel.hidden = _cancelled_block_ == NULL || _cancelled_block_ == nil;
 }
 
 - (void)alertForLock:(BOOL)isLock autoDismiss:(BOOL)autoDismiss {
     if(self.alertViewState != AlertViewStateReady) return;
+    
     self.alertViewState = AlertViewStateWillAppear;
     _cancelled_block_ = nil;
     btnCancel.hidden = YES;
+    
     UIWindow *lastWindow = [self lastWindow];
     if(isLock) {
         lockedView = [[UIView alloc] initWithFrame:lastWindow.bounds];
@@ -124,7 +123,8 @@
 }
 
 - (void)btnCancelPressed:(id)sender {
-    if(_cancelled_block_ != NULL && _cancelled_block_ != nil) {
+    if(_cancelled_block_ != NULL
+            && _cancelled_block_ != nil) {
         _cancelled_block_();
     }
 }
@@ -156,6 +156,7 @@
 }
 
 - (void)dismissAlertView {
+    _cancelled_block_ = nil;
     if(timer != nil && timer.isValid) {
         [timer invalidate];
     }
@@ -192,6 +193,7 @@
         case AlertViewTypeNone:
             indicatorView.hidden = YES;
             imgTips.hidden = YES;
+            btnCancel.hidden = YES;
             lblMessage.text = [XXStringUtils emptyString];
             break;
         case AlertViewTypeWaitting:
@@ -211,6 +213,11 @@
         default:
             break;
     }
+}
+
+- (void)setMessage:(NSString *)message forType:(AlertViewType)type showCancellButton:(BOOL)showCancelButton {
+    btnCancel.hidden = !showCancelButton;
+    [self setMessage:message forType:type];
 }
 
 - (UIWindow *)lastWindow {

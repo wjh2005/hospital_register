@@ -8,6 +8,6 @@
 #import "BirthDayPickerView.h"
 
 @interface PersonalCenterViewController :
-        NavigationViewController<UITableViewDelegate, UITableViewDataSource, GenderPickerViewControllerDelegate, TextModifyViewControllerDelegate, BirthDayPickerViewDelegate>
+        NavigationViewController<UITableViewDelegate, UITableViewDataSource, GenderPickerViewControllerDelegate, TextModifyViewControllerDelegate, BirthDayPickerViewDelegate, UITextFieldDelegate>
 
 @end

@@ -16,6 +16,9 @@ typedef enum {
 
 @interface Account : Entity
 
+@property (nonatomic, strong) NSString *account;
+@property (nonatomic, strong) NSString *password;
+
 // Basic Info
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSDate *birth;

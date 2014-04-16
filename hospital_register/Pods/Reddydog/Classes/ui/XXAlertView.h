@@ -32,6 +32,7 @@ typedef void(^XXAlertViewCancelledBlock)(void);
 + (instancetype)currentAlertView;
 
 - (void)setMessage:(NSString *)message forType:(AlertViewType)type;
+- (void)setMessage:(NSString *)message forType:(AlertViewType)type showCancellButton:(BOOL)showCancelButton;
 - (void)alertForLock:(BOOL)isLock autoDismiss:(BOOL)autoDismiss;
 - (void)alertForLock:(BOOL)isLock autoDismiss:(BOOL)autoDismiss cancelledBlock:(XXAlertViewCancelledBlock)cancelledBlock;
 - (void)alertForLock:(BOOL)isLock timeout:(NSTimeInterval)timeout timeoutMessage:(NSString *)message;

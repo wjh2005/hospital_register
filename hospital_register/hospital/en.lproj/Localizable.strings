@@ -9,7 +9,7 @@
 
 /******************** Global | Strings ********************/
 
-"hospital_name"                  =              "长沙市中心医院";
+"hospital_name"                  =              "长沙市XX医院";
 
 "loading"                        =              "加载中";
 "done"                           =              "完成";
@@ -24,8 +24,50 @@
 "modify"                         =              "修改";
 "please_select"                  =              "请选择";
 "within_a_week"                  =              "一周内";
+"please_wait"                    =              "请稍后";
 "no_data"                        =              "没有数据";
+"being_login"                    =              "正在登录";
+"being_logout"                   =              "正在注销";
+"being_register"                 =              "正在注册";
+"account_register_success"       =              "注册成功";
+"logout_success"                 =              "注销成功";
 "retry_loading"                  =              "加载失败,请点击屏幕重试";
+
+
+/******************** Account Login && Register | Strings ********************/
+
+"account"                        =              "账号";
+"submit"                         =              "提交";
+"next_step"                      =              "下一步";
+"type_login_account"             =              "请填入登录账号";
+"account_input_tips"             =              "账号/手机/邮箱";
+"name"                           =              "姓名";
+"type_real_name"                 =              "请填入您的真实姓名";
+"type_clinic_card"               =              "请填入就诊卡上的号码";
+"mobile"                         =              "手机号码";
+"account_not_blank"              =              "账号不能为空";
+"name_not_blank"                 =              "姓名不能为空";
+"clinic_card_not_blank"          =              "就诊卡号不能为空";
+"mobile_not_blank"               =              "手机号不能为空";
+"mobile_format_invalid"          =              "手机号格式错误";
+"mobile_input_tips"              =              "请填入手机号码";
+"address_input_tips"             =              "请填入联系地址";
+"basic_info_register_tips"       =              "请确保以上所填信息真实无误";
+"contact_info_tips"              =              "请务必填入您的真实手机号码, 信息核实后此号码用于接收初始密码";
+"password_input_tips"            =              "密码";
+"account_login"                  =              "登录";
+"account_register"               =              "注册账号";
+"account_register_short"         =              "注册";
+"register_protocal"              =              "注册协议";
+"contact_info"                   =              "联系信息";
+"basic_info"                     =              "基本信息";
+"forgot_password"                =              "忘记密码";
+"username_not_blank"             =              "用户名不能为空";
+"password_not_blank"             =              "密码不能为空";
+"name_or_password_invalid"       =              "用户名或密码错误";
+"login_success"                  =              "登录成功";
+"login_cancelled"                =              "登录已取消";
+"agree_and_continue"             =              "同意条款并继续";
 
 
 /******************** Date | Strings ********************/

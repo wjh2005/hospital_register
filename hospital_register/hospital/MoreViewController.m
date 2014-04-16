@@ -6,6 +6,7 @@
 #import "WebViewController.h"
 #import "PasswordChangeViewController.h"
 #import "FeedbackViewController.h"
+#import "AppDelegate.h"
 
 @implementation MoreViewController {
     // settings UI
@@ -106,6 +107,7 @@
         [btnLogout setTitle:NSLocalizedString(@"logout", @"") forState:UIControlStateNormal];
         [btnLogout setBackgroundImage:[UIImage imageNamed:@"btn_red"] forState:UIControlStateNormal];
         [btnLogout setBackgroundImage:[UIImage imageNamed:@"btn_red_highlighted"] forState:UIControlStateHighlighted];
+        [btnLogout addTarget:self action:@selector(btnLogoutPressed:) forControlEvents:UIControlEventTouchUpInside];
         [footView addSubview:btnLogout];
         return footView;
     }
@@ -135,6 +137,11 @@
         }
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)btnLogoutPressed:(id)sender {
+    AppDelegate *app = [UIApplication sharedApplication].delegate;
+    [app logout];
 }
 
 @end

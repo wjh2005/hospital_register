@@ -8,6 +8,7 @@
 #import "AppDelegate.h"
 #import "DepartmentsManager.h"
 #import "UIColor+Image.h"
+#import "AccountLoginViewController.h"
 
 @implementation AppDelegate {
     RootViewController *_rootViewController_;
@@ -62,6 +63,7 @@
     // init and show key window
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.rootViewController = navigationController;
+    
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -92,6 +94,23 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)logout {
+    [[XXAlertView currentAlertView] setMessage:NSLocalizedString(@"being_logout", @"") forType:AlertViewTypeWaitting];
+    [[XXAlertView currentAlertView] alertForLock:YES autoDismiss:NO];
+    [self clearAuth];
+    [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(showLoginViewController) userInfo:nil repeats:NO];
+}
+
+- (void)clearAuth {
+}
+
+- (void)showLoginViewController {
+    [[XXAlertView currentAlertView] setMessage:NSLocalizedString(@"logout_success", @"") forType:AlertViewTypeSuccess];
+    [[XXAlertView currentAlertView] delayDismissAlertView];
+    [_rootViewController_.navigationController popViewControllerAnimated:NO];
+    [_rootViewController_.navigationController pushViewController:[[AccountLoginViewController alloc] init] animated:NO];
 }
 
 #pragma mark -
