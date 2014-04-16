@@ -141,11 +141,12 @@ static CGFloat const kTextBoxWidth  = 320;
     [self.view addSubview:btnForgetPassword];
     
     UIButton *btnRegister = [[UIButton alloc] initWithFrame:CGRectMake(lblSeperator.frame.origin.x + 5, btnForgetPassword.frame.origin.y, 80, 44)];
+    btnRegister.tag = 100;
     [btnRegister setTitle:NSLocalizedString(@"account_register", @"") forState:UIControlStateNormal];
     btnRegister.titleLabel.font = [UIFont systemFontOfSize:15.0f];
     [btnRegister setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];
     [btnRegister setTitleColor:[UIColor lightGrayColor] forState:UIControlStateHighlighted];
-    [btnRegister addTarget:self action:@selector(btnRegisterPressed:) forControlEvents:UIControlEventTouchUpInside];
+    [btnRegister addTarget:self action:@selector(btnRegisterOrPasswordForgotPressed:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnRegister];
 }
 
@@ -195,8 +196,75 @@ static CGFloat const kTextBoxWidth  = 320;
     }
 }
 
-- (void)btnRegisterPressed:(id)sender {
-    [self.navigationController pushViewController:[[AccountRegisterStep1ViewController alloc] init] animated:YES];
+- (void)btnRegisterOrPasswordForgotPressed:(UIButton *)sender {
+    // create register step 1 view controller
+
+    UIViewController *presentedViewController = nil;
+    
+    if(sender.tag == 100) {
+        presentedViewController = [[AccountRegisterStep1ViewController alloc] init];
+    }
+    
+    if(presentedViewController == nil) return;
+    
+    UIBarButtonItem *btnBackItem = [[UIBarButtonItem alloc] init];
+    btnBackItem.title = NSLocalizedString(@"cancel", @"");
+    btnBackItem.target = self;
+    btnBackItem.action = @selector(cancel);
+    if(![UIDevice systemVersionIsMoreThanOrEuqal7]) {
+        // set button text attributes for state normal
+        [btnBackItem setTitleTextAttributes:@ {
+            UITextAttributeTextColor : [UIColor appFontDarkGray],
+            UITextAttributeTextShadowColor : [UIColor clearColor]
+        }                          forState:UIControlStateNormal];
+        
+        // set button text attributes for state highlighted
+        [btnBackItem setTitleTextAttributes:[btnBackItem titleTextAttributesForState:UIControlStateNormal] forState:UIControlStateHighlighted];
+    }
+    presentedViewController.navigationItem.leftBarButtonItem = btnBackItem;
+    
+    
+    //create navigation view controller
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:presentedViewController];
+    
+    // set dateTitle text attribute
+    NSDictionary *textAttributes = nil;
+    if([UIDevice systemVersionIsMoreThanOrEuqal7]) {
+        textAttributes = @{
+                           UITextAttributeTextColor : [UIColor appFontDarkGray],
+                           UITextAttributeFont : [UIFont boldSystemFontOfSize:18.f]
+                           };
+    } else {
+        textAttributes = @{
+                           UITextAttributeTextColor : [UIColor appFontDarkGray],
+                           UITextAttributeFont : [UIFont boldSystemFontOfSize:18.f],
+                           UITextAttributeTextShadowColor : [UIColor clearColor]
+                           };
+    }
+    navigationController.navigationBar.titleTextAttributes = textAttributes;
+    
+    // set bar background color
+    if([UIDevice systemVersionIsMoreThanOrEuqal7]) {
+        navigationController.navigationBar.barTintColor = [UIColor appBackgroundTopbar];
+        
+        // bar button color for ios7, default is blue
+        // navigationController.navigationBar.tintColor = [UIColor redColor];
+    } else {
+        // make ios 6 more flat
+        [navigationController.navigationBar setBackgroundImage:
+         [UIColor imageWithColor:[UIColor appBackgroundTopbar] size:CGSizeMake([UIScreen mainScreen].bounds.size.width, 44)]
+                                                 forBarMetrics:UIBarMetricsDefault];
+        
+        // tint color
+        navigationController.navigationBar.tintColor = [UIColor colorWithRed:216.f / 255.f green:220.f / 255.f blue:220.f / 255.f alpha:1.f];
+    }
+    
+    // for ios7 and later
+    if([navigationController.navigationBar respondsToSelector:@selector(setTranslucent:)]) {
+        navigationController.navigationBar.translucent = NO;
+    }
+    
+    [self presentViewController:navigationController animated:YES completion:^{ }];
 }
 
 - (void)generateSeparatorLineWithFrame:(CGRect)frame withImage:(UIImage *)separatorImage {
@@ -215,11 +283,15 @@ static CGFloat const kTextBoxWidth  = 320;
     [[GlobalUserAppData current] save];
     [[XXAlertView currentAlertView] setMessage:NSLocalizedString(@"login_success", @"") forType:AlertViewTypeSuccess showCancellButton:NO];
     [[XXAlertView currentAlertView] delayDismissAlertView];
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:NO completion:^{ }];
 }
 
 - (void)loginFailed {
     self.loginState = LoginStateUnStart;
+}
+
+- (void)cancel {
+    [self dismissViewControllerAnimated:YES completion:^{ }];
 }
 
 #pragma mark -

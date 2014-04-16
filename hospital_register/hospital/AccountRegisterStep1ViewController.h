@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface AccountRegisterStep1ViewController : BaseViewController
+@interface AccountRegisterStep1ViewController : BaseViewController<UINavigationControllerDelegate>
 
 @end

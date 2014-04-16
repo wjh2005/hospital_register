@@ -112,7 +112,7 @@
     [[XXAlertView currentAlertView] setMessage:NSLocalizedString(@"logout_success", @"") forType:AlertViewTypeSuccess];
     [[XXAlertView currentAlertView] delayDismissAlertView];
     [_rootViewController_.navigationController popViewControllerAnimated:NO];
-    [_rootViewController_.navigationController pushViewController:[[AccountLoginViewController alloc] init] animated:NO];
+    [_rootViewController_ presentViewController:[[AccountLoginViewController alloc] init] animated:NO completion:^{ }];
 }
 
 #pragma mark -

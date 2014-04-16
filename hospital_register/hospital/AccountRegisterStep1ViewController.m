@@ -55,8 +55,26 @@
     [_htmlView_ loadWithHtmlString:htmlString];
 }
 
+
 - (void)btnAgreeAndContinuePressed:(id)sender {
     [self.navigationController pushViewController:[[AccountRegisterStep2ViewController alloc] init] animated:YES];
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    UIBarButtonItem *btnBackItem = [[UIBarButtonItem alloc] init];
+    btnBackItem.title = NSLocalizedString(@"back", @"");
+    if(![UIDevice systemVersionIsMoreThanOrEuqal7]) {
+        // set button text attributes for state normal
+        [btnBackItem setTitleTextAttributes:@ {
+            UITextAttributeTextColor : [UIColor appFontDarkGray],
+            UITextAttributeTextShadowColor : [UIColor clearColor]
+        }                          forState:UIControlStateNormal];
+        
+        // set button text attributes for state highlighted
+        [btnBackItem setTitleTextAttributes:[btnBackItem titleTextAttributesForState:UIControlStateNormal] forState:UIControlStateHighlighted];
+    }
+    viewController.navigationItem.backBarButtonItem = btnBackItem;
 }
 
 @end

@@ -8,6 +8,7 @@
 #import "RootViewController.h"
 #import "AccountLoginViewController.h"
 #import "GlobalUserAppData.h"
+#import "AppDelegate.h"
 
 #import "RealtimeQueuingTypePickerViewController.h"
 #import "ReportsViewController.h"
@@ -86,7 +87,8 @@ static const CGFloat kGroupButtonsPanelHeight = kGroupButtonHeight * 2 - 2;
 - (void)setUp {
     [super setUp];
     if(![GlobalUserAppData current].hasLogin) {
-        [self.navigationController pushViewController:[[AccountLoginViewController alloc] init] animated:NO];
+        AppDelegate *app = [UIApplication sharedApplication].delegate;
+        [app.rootViewController presentViewController:[[AccountLoginViewController alloc] init] animated:NO completion:^{ }];
     }
 }
 
@@ -171,12 +173,6 @@ static const CGFloat kGroupButtonsPanelHeight = kGroupButtonHeight * 2 - 2;
         [btnBackItem setTitleTextAttributes:[btnBackItem titleTextAttributesForState:UIControlStateNormal] forState:UIControlStateHighlighted];
     }
     viewController.navigationItem.backBarButtonItem = btnBackItem;
-    
-    if([viewController isKindOfClass:[AccountLoginViewController class]]) {
-        viewController.navigationController.navigationBarHidden = YES;
-    } else {
-        viewController.navigationController.navigationBarHidden = NO;
-    }
 }
 
 #pragma mark -

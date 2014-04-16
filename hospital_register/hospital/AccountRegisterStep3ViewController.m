@@ -9,6 +9,8 @@
 #import "AccountRegisterStep3ViewController.h"
 #import "FixedTextField.h"
 #import "Account.h"
+#import "AccountLoginViewController.h"
+#import "AppDelegate.h"
 #import "GlobalUserAppData.h"
 
 @interface AccountRegisterStep3ViewController ()
@@ -85,7 +87,8 @@
     [[XXAlertView currentAlertView] setMessage:NSLocalizedString(@"account_register_success", @"") forType:AlertViewTypeSuccess];
     [[XXAlertView currentAlertView] delayDismissAlertView];
     
-    [self.navigationController popToRootViewControllerAnimated:NO];
+    AppDelegate *app = [UIApplication sharedApplication].delegate;
+    [app.rootViewController dismissViewControllerAnimated:YES completion:^{}];
 }
 
 #pragma mark -
