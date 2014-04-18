@@ -12,7 +12,7 @@
 
 #import "RealtimeQueuingTypePickerViewController.h"
 #import "ReportsViewController.h"
-#import "IntelligentGuidanceViewController.h"
+#import "IntelligentRecommendationViewController.h"
 #import "PersonalCenterViewController.h"
 #import "MoreViewController.h"
 #import "ToRegisterViewController.h"
@@ -96,8 +96,8 @@ static const CGFloat kGroupButtonsPanelHeight = kGroupButtonHeight * 2 - 2;
     NSArray *groupButtonEntries = [NSArray arrayWithObjects:
                     [[GroupButtonEntry alloc] initWithIdentifier:@"real-time-queuing" imageName:@"btn_realtime_queuing"],
                     [[GroupButtonEntry alloc] initWithIdentifier:@"report-queries" imageName:@"btn_report_query"],
-                    [[GroupButtonEntry alloc] initWithIdentifier:@"medical-order" imageName:@"btn_medical_order_query"],
-                    [[GroupButtonEntry alloc] initWithIdentifier:@"intelligent-guidance" imageName:@"btn_intelligent_guidance"],
+                    [[GroupButtonEntry alloc] initWithIdentifier:@"see-doctor-history" imageName:@"btn_see_doctor_history"],
+                    [[GroupButtonEntry alloc] initWithIdentifier:@"intelligent-recommendation" imageName:@"btn_intelligent_recommendation"],
                     [[GroupButtonEntry alloc] initWithIdentifier:@"personal-center" imageName:@"btn_personal_center"],
                     [[GroupButtonEntry alloc] initWithIdentifier:@"more" imageName:@"btn_more"], nil];
 
@@ -137,12 +137,12 @@ static const CGFloat kGroupButtonsPanelHeight = kGroupButtonHeight * 2 - 2;
         controller = [[ToRegisterViewController alloc] init];
     } else if([@"report-queries" isEqualToString:button.identifier]) {
         controller = [[ReportsViewController alloc] initWithReportType:ReportTypeReport];
-    } else if([@"medical-order" isEqualToString:button.identifier]) {
-        controller = [[ReportsViewController alloc] initWithReportType:ReportTypeMedicalOrder];
+    } else if([@"see-doctor-history" isEqualToString:button.identifier]) {
+        controller = [[ReportsViewController alloc] initWithReportType:ReportTypeSeeDoctorHistory];
     } else if([@"real-time-queuing" isEqualToString:button.identifier]) {
         controller = [[RealtimeQueuingTypePickerViewController alloc] init];
-    } else if([@"intelligent-guidance" isEqualToString:button.identifier]) {
-        controller = [[IntelligentGuidanceViewController alloc] init];
+    } else if([@"intelligent-recommendation" isEqualToString:button.identifier]) {
+        controller = [[IntelligentRecommendationViewController alloc] init];
     } else if([@"personal-center" isEqualToString:button.identifier]) {
         controller = [[PersonalCenterViewController alloc] init];
     } else if([@"more" isEqualToString:button.identifier]) {

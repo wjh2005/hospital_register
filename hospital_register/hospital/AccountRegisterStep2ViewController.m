@@ -159,8 +159,8 @@
 
 - (void)textFieldEventEditingChanged:(UITextField *)sender {
     UITextRange *markRange = sender.markedTextRange;
-    int pos = [sender offsetFromPosition:markRange.start toPosition:markRange.end];
-    int nLength = sender.text.length - pos;
+    NSInteger pos = [sender offsetFromPosition:markRange.start toPosition:markRange.end];
+    NSInteger nLength = sender.text.length - pos;
     if (nLength > 4 && pos==0) {
         sender.text = [sender.text substringToIndex:4];
     }

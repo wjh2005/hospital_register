@@ -37,7 +37,7 @@
     if(ReportTypeReport == self.reportType) {
        self.title = NSLocalizedString(@"report_queries", @"");
     } else {
-       self.title = NSLocalizedString(@"medical_order_query", @"");
+       self.title = NSLocalizedString(@"see_doctor_history", @"");
     }
 
     tblReports = [[UITableView alloc]

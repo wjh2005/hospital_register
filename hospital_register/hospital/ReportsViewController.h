@@ -9,7 +9,7 @@
 
 typedef NS_ENUM(NSInteger , ReportType) {
     ReportTypeReport,
-    ReportTypeMedicalOrder
+    ReportTypeSeeDoctorHistory
 };
 
 @interface ReportsViewController :

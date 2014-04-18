@@ -104,7 +104,7 @@
                 [sself loadWasFailed];
             });
 #ifdef DEBUG
-            NSLog(@"Load Url [%@] Failed, Status code is %d, Error [%@]", _url_, response != nil ? response.statusCode : -1, error.description);
+            NSLog(@"Load Url [%@] Failed, Status code is %ld, Error [%@]", _url_, (long)(response != nil ? response.statusCode : -1), error.description);
 #endif
         }
     });

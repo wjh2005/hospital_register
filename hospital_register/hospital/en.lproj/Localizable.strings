@@ -130,14 +130,14 @@
 "report_date"                    =              "日期";
 
 
-/******************** Medical Order | Strings ********************/
+/******************** See Doctor History | Strings ********************/
 
-"medical_order_query"            =              "就诊经历";
+"see_doctor_history"             =              "就诊历史";
 
 
-/******************** Intelligent Guidance System | Strings ********************/
+/******************** Intelligent Recommendation | Strings ********************/
 
-"intelligent_guidance"           =              "智能导诊";
+"intelligent_recommendation"     =              "智能推荐";
 
 
 /******************** Personal Center | Strings ********************/
