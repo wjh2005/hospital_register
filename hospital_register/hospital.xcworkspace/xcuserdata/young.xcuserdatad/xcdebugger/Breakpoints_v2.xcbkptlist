@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "hospital/PersonalCenterViewController.m"
-            timestampString = "419306272.335464"
+            timestampString = "419519699.459999"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
-            landmarkName = "@implementation PersonalCenterViewController"
-            landmarkType = "3">
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "-genderPickerViewController:didSelectGender:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

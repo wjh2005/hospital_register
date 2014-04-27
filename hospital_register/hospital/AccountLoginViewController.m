@@ -170,9 +170,12 @@ static CGFloat const kTextBoxWidth  = 320;
     NSString *password = [XXStringUtils trim:txtPassword.text];
     
     if([@"demo" isEqualToString:account.lowercaseString] && [@"demo" isEqualToString:password.lowercaseString]) {
-        NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:2.f target:self selector:@selector(loginSuccess) userInfo:nil repeats:NO];
-        __weak NSTimer *wTimer = timer;
+        
+//        __weak NSTimer *wTimer = timer;
         [[XXAlertView currentAlertView] setMessage:NSLocalizedString(@"being_login", @"") forType:AlertViewTypeWaitting];
+        [[XXAlertView currentAlertView] alertForLock:YES autoDismiss:NO];
+        [NSTimer scheduledTimerWithTimeInterval:1.f target:self selector:@selector(loginSuccess) userInfo:nil repeats:NO];
+        /*
         [[XXAlertView currentAlertView] alertForLock:YES autoDismiss:NO cancelledBlock:^{
             if(LoginStateLogging != self.loginState) return;
             self.loginState = LoginStateCancelling;
@@ -189,6 +192,7 @@ static CGFloat const kTextBoxWidth  = 320;
             [[XXAlertView currentAlertView] setMessage:NSLocalizedString(@"login_cancelled", @"") forType:AlertViewTypeSuccess showCancellButton:NO];
             [[XXAlertView currentAlertView] delayDismissAlertView];
         }];
+         */
     } else {
         [[XXAlertView currentAlertView] setMessage:NSLocalizedString(@"name_or_password_invalid", @"") forType:AlertViewTypeFailed];
         [[XXAlertView currentAlertView] alertForLock:NO autoDismiss:YES];

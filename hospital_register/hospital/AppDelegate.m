@@ -10,6 +10,7 @@
 #import "UIColor+Image.h"
 #import "AccountLoginViewController.h"
 #import "GlobalUserAppData.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation AppDelegate {
     RootViewController *_rootViewController_;
@@ -66,6 +67,8 @@
     self.window.rootViewController = navigationController;
     
     [self.window makeKeyAndVisible];
+    
+    [XXAlertView currentAlertView].layer.cornerRadius = 10;
 
     return YES;
 }
